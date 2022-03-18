@@ -1,0 +1,40 @@
+ion-content {
+    --background: url('../../assets/imgs/ecomm1.png') no-repeat center center/cover;
+    ion-grid {
+        transform: translateY(10vh);
+        ion-label, p {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 0.8px;
+        }
+    }
+}
+
+ion-footer {
+    ion-row {
+        padding-top: 5vh;
+        background: transparent;
+        display: block;
+        ion-fab-button {
+            margin-right: 2.5vh;
+        }
+        ion-list {
+            border-radius: 20px 20px 0 0;
+            padding-bottom: 8vh;
+            ion-list-header {
+                ion-label {
+                    font-weight: bold;
+                    font-size: 1.8rem;
+                }
+            }
+            ion-input, ion-text {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+        .error {
+            font-size: 0.75em !important;
+        }
+        }
+    }
+}

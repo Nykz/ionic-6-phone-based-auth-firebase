@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-label color="white" class="ion-margin ion-padding-start">
+      Welcome
+      <p>
+        <ion-text color="white" class="ion-margin ion-padding-start">to LocalMart</ion-text>
+      </p>
+    </ion-label>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+
+  <ion-row>
+
+    <ion-fab vertical="top" horizontal="end">
+      <ion-fab-button color="danger" (click)="signIn()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-list lines="full">
+      <ion-list-header class="ion-margin">
+        <ion-label>Get Started</ion-label>
+      </ion-list-header>
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+        <form [formGroup]="form">
+
+          <div id="sign-in-button"></div>
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input 
+                formControlName="phone" 
+                placeholder="Mobile Number" 
+                type="tel"
+                minlength="10"
+                maxlength="10">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('phone').valid && form.get('phone').touched">
+              <ion-text class="error" *ngIf="form.get('phone').hasError('required')" color="danger">
+                * Please enter the Mobile Number
+              </ion-text>
+              <ion-text class="error" *ngIf="form.get('phone').hasError('minlength') 
+                && !form.get('phone').hasError('required')" color="danger">
+                * Please enter a valid Mobile Number
+              </ion-text>
+            </ion-text>
+          </div>
+
+        </form>
+
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+
+</ion-footer>
